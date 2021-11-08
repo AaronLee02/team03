@@ -35,6 +35,7 @@
 				 <div class="clearfix"></div>
 				 <h3>반려동물</h3>
 			 </div>
+			 
 			 <div class="content-grid l-grids">
 				 <figure class="effect-bubba">
 						<img src="/resources/images/32.jpg" alt=""/>
@@ -48,10 +49,28 @@
 			 </div>
 		 </div>
 		 <div class="col-md-4 bride-grid">
-				<div class="content-grid l-grids">
-						<img src="/resources/images/60.jpg" alt=""/>
-						
+			 <div class="content-grid l-grids">
+				 <figure class="effect-bubba">
+						<img src="/resources/images/52.jpg" alt=""/>
+						<figcaption>
+							<h4>Nullam molestie </h4>
+							<p>In sit amet sapien eros Integer in tincidunt labore et dolore magna aliqua</p>																
+						</figcaption>			
+				 </figure>
+				 <div class="clearfix"></div>
 				 <h3>테크·가전</h3>
+			 </div>
+			 
+			 <div class="content-grid l-grids">
+				 <figure class="effect-bubba">
+						<img src="/resources/images/61.jpg" alt=""/>
+						<figcaption>
+							<h4>Nullam molestie </h4>
+							<p>In sit amet sapien eros Integer in tincidunt labore et dolore magna aliqua</p>																
+						</figcaption>			
+				 </figure>	
+				 <div class="clearfix"></div>
+				 <h3>스포츠·모빌리티</h3>
 			 </div>
 		 </div>
 		 <div class="col-md-4 bride-grid">
