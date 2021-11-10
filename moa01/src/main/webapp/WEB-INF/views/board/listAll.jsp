@@ -53,6 +53,7 @@
 									<td>${boardVO.writer}</td>
 									<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 											value="${boardVO.rdate}" /></td>
+									<td><span class="badge bg-red">${boardVO.viewcnt }</span></td>
 								</tr>
 
 							</c:forEach>
@@ -61,7 +62,7 @@
 
 					</div>
 					<!-- /.box-body -->
-					<div class="box-footer">Footer</div>
+					<div class="box-footer">  </div>
 					<!-- /.box-footer-->
 				</div>
 			</div>

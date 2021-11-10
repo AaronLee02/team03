@@ -22,8 +22,8 @@ public class BoardServiceImpl implements BoardService {
   }
 
   @Override
-  public BoardVO read(Integer bno) throws Exception {
-    return dao.read(bno);
+  public BoardVO read(Integer rNum) throws Exception {
+    return dao.read(rNum);
   }
 
   @Override
@@ -32,8 +32,8 @@ public class BoardServiceImpl implements BoardService {
   }
 
   @Override
-  public void remove(Integer bno) throws Exception {
-    dao.delete(bno);
+  public void remove(Integer rNum) throws Exception {
+    dao.delete(rNum);
   }
 
   @Override
@@ -63,6 +63,10 @@ public class BoardServiceImpl implements BoardService {
   public int listSearchCount(SearchCriteria cri) throws Exception {
 
     return dao.listSearchCount(cri);
+  }
+  @Override
+  public void viewcount(Integer rNum) throws Exception{
+	  dao.viewcount(rNum);
   }
 
 }

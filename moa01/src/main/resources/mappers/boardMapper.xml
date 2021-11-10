@@ -5,30 +5,40 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
+	<update id="viewcount">
+		update REVIEWBOARD2 set viewcnt=viewcnt+1
+		where rNum=#{rNum}
+		
+	</update>
+
+
+
+
+
 	<insert id="create">
 		INSERT INTO REVIEWBOARD2 VALUES
 		(REVIEWBOARD2_RNUM_SEQ.NEXTVAL, 1, #{title},
 		#{content}, #{writer},
-		SYSDATE)
+		SYSDATE,0)
 	</insert>
 
 	<select id="read" resultType="org.zerock.domain.BoardVO">
 		select
-		bno, title, content, writer,
-		regdate, viewcnt
+		rNum, title, content, writer,
+		rdate ,fNum ,viewcnt
 		from
-		tbl_board
-		where bno = #{bno}
+		REVIEWBOARD2
+		where rNum = #{rNum}
 	</select>
 
 	<update id="update">
-		update tbl_board set title =#{title}, content
+		update REVIEWBOARD2 set title =#{title}, content
 		=#{content}
-		where bno = #{bno}
+		where rNum = #{rNum}
 	</update>
 
 	<delete id="delete">
-		delete from tbl_board where bno = #{bno}
+		delete from REVIEWBOARD2 where rNum = #{rNum}
 	</delete>
 
 	<select id="listAll" resultType="org.zerock.domain.BoardVO">
@@ -41,11 +51,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="listPage" resultType="org.zerock.domain.BoardVO">
  <![CDATA[
  select 
-   bno, title, content, writer, regdate, viewcnt 
+   rNum, title, content, writer, regdate, viewcnt 
  from 
-   tbl_board 
- where bno > 0 
- order by bno desc, regdate desc
+   REVIEWBOARD2 
+ where rNum > 0 
+ order by rNum desc, regdate desc
  limit #{page}, 10
  ]]>
 	</select>
@@ -53,11 +63,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="listCriteria" resultType="org.zerock.domain.BoardVO">
  <![CDATA[
  select 
-   bno, title, content, writer, regdate, viewcnt 
+   rNum, title, content, writer, regdate, viewcnt 
  from 
-   tbl_board 
- where bno > 0 
- order by bno desc, regdate desc
+   REVIEWBOARD2 
+ where rNum > 0 
+ order by rNum desc, regdate desc
  limit #{pageStart}, #{perPageNum}
  ]]>
 	</select>
@@ -67,11 +77,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="countPaging" resultType="int">
  <![CDATA[
  select 
-   count(bno) 
+   count(rNum) 
  from 
-   tbl_board 
+   REVIEWBOARD2 
  where 
-   bno > 0 
+   rNum > 0 
  ]]>
 	</select>
 
@@ -113,23 +123,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="listSearch" resultType="org.zerock.domain.BoardVO">
 <![CDATA[  
   select * 
-  from tbl_board 
-  where bno > 0 
+  from REVIEWBOARD2 
+  where rNum > 0 
 ]]>
 
 		<include refid="search"></include>
   
 <![CDATA[    
-  order by bno desc
+  order by rNum desc
   limit #{pageStart}, #{perPageNum}
 ]]>
 	</select>
 
 	<select id="listSearchCount" resultType="int">
 <![CDATA[  
-  select count(bno) 
-  from tbl_board 
-  where bno > 0 
+  select count(rNum) 
+  from REVIEWBOARD2 
+  where rNum > 0 
 ]]>
 		<include refid="search"></include>
 

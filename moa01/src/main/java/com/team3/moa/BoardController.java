@@ -65,15 +65,16 @@ public class BoardController {
   }
 
   @RequestMapping(value = "/read", method = RequestMethod.GET)
-  public void read(@RequestParam("bno") int bno, Model model) throws Exception {
-
-    model.addAttribute(service.read(bno));
+  public void read(@RequestParam("rNum") int rNum, Model model) throws Exception {
+	  logger.info("/paramrNum="+ rNum);
+	  service.viewcount(rNum);
+    model.addAttribute(service.read(rNum));
   }
 
   @RequestMapping(value = "/remove", method = RequestMethod.POST)
-  public String remove(@RequestParam("bno") int bno, RedirectAttributes rttr) throws Exception {
+  public String remove(@RequestParam("rNum") int rNum, RedirectAttributes rttr) throws Exception {
 
-    service.remove(bno);
+    service.remove(rNum);
 
     rttr.addFlashAttribute("msg", "SUCCESS");
 
@@ -81,9 +82,9 @@ public class BoardController {
   }
 
   @RequestMapping(value = "/modify", method = RequestMethod.GET)
-  public void modifyGET(int bno, Model model) throws Exception {
+  public void modifyGET(int rNum, Model model) throws Exception {
 
-    model.addAttribute(service.read(bno));
+    model.addAttribute(service.read(rNum));
   }
 
   @RequestMapping(value = "/modify", method = RequestMethod.POST)
@@ -121,15 +122,15 @@ public class BoardController {
   }
 
   @RequestMapping(value = "/readPage", method = RequestMethod.GET)
-  public void read(@RequestParam("bno") int bno, @ModelAttribute("cri") Criteria cri, Model model) throws Exception {
+  public void read(@RequestParam("rNum") int rNum, @ModelAttribute("cri") Criteria cri, Model model) throws Exception {
 
-    model.addAttribute(service.read(bno));
+    model.addAttribute(service.read(rNum));
   }
 
   @RequestMapping(value = "/removePage", method = RequestMethod.POST)
-  public String remove(@RequestParam("bno") int bno, Criteria cri, RedirectAttributes rttr) throws Exception {
+  public String remove(@RequestParam("rNum") int rNum, Criteria cri, RedirectAttributes rttr) throws Exception {
 
-    service.remove(bno);
+    service.remove(rNum);
 
     rttr.addAttribute("page", cri.getPage());
     rttr.addAttribute("perPageNum", cri.getPerPageNum());
@@ -139,10 +140,10 @@ public class BoardController {
   }
 
   @RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
-  public void modifyPagingGET(@RequestParam("bno") int bno, @ModelAttribute("cri") Criteria cri, Model model)
+  public void modifyPagingGET(@RequestParam("rNum") int rNum, @ModelAttribute("cri") Criteria cri, Model model)
       throws Exception {
 
-    model.addAttribute(service.read(bno));
+    model.addAttribute(service.read(rNum));
   }
 
 }

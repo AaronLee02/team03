@@ -10,11 +10,11 @@ public interface BoardService {
 
   public void regist(BoardVO board) throws Exception;
 
-  public BoardVO read(Integer bno) throws Exception;
+  public BoardVO read(Integer rNum) throws Exception;
 
   public void modify(BoardVO board) throws Exception;
 
-  public void remove(Integer bno) throws Exception;
+  public void remove(Integer rNum) throws Exception;
 
   public List<BoardVO> listAll() throws Exception;
 
@@ -26,5 +26,7 @@ public interface BoardService {
       throws Exception;
 
   public int listSearchCount(SearchCriteria cri) throws Exception;
+  
+  public void viewcount(Integer rNum) throws Exception;
 
 }
