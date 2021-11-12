@@ -101,10 +101,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</li>
-						<li class="grid"><a href="/main/register">펀딩등록</a>
+						<li class="grid"><a href="/board/register">펀딩등록</a>
 						</li>
 						<li class="grid"><a href="/main/contact">이벤트</a></li>
-						<li class="grid"><a href="/main/list">게시판</a></li>
+						<li class="grid"><a href="/board/list">게시판</a></li>
 					</ul>
 					<div class="clearfix"></div>
 				</div>

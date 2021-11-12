@@ -6,8 +6,6 @@
 <%@include file="../include/header.jspf"%>
 
 
-
-
 <!-- Content Wrapper. Contains page content -->
 <div class="container">
 	<!-- Content Header (Page header) -->
@@ -26,10 +24,17 @@
 	<section class="content">
 		<div class="row">
 			<!-- left column -->
+
+
 			<div class="col-md-12">
 				<!-- general form elements -->
+				<div class='box'>
+					<div class="box-header with-border">
+						<h3 class="box-title">Board List</h3>
+					</div>
 
-				<div class='box-body'>
+
+					<div class='box-body'>
 
 						<select name="searchType">
 							<option value="n"
@@ -61,27 +66,30 @@
 					</div>
 				</div>
 
+
 				<div class="box">
 					<div class="box-header with-border">
-						<h3 class="box-title">LIST ALL PAGE</h3>
+						<h3 class="box-title">LIST PAGING</h3>
 					</div>
 					<div class="box-body">
-
 						<table class="table table-bordered">
 							<tr>
 								<th style="width: 10px">BNO</th>
 								<th>TITLE</th>
+								<th>CONTENT</th>
 								<th>WRITER</th>
 								<th>REGDATE</th>
 								<th style="width: 40px">VIEWCNT</th>
 							</tr>
 
-
 							<c:forEach items="${list}" var="boardVO">
 
 								<tr>
 									<td>${boardVO.rNum}</td>
-									<td><a href='/board/read?rNum=${boardVO.rNum}'>${boardVO.title}</a></td>
+									<td><a
+										href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.rNum}'>
+											${boardVO.title} </a></td>
+									<td>${boardVO.content}</td>
 									<td>${boardVO.writer}</td>
 									<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 											value="${boardVO.rdate}" /></td>
@@ -91,10 +99,38 @@
 							</c:forEach>
 
 						</table>
-
 					</div>
 					<!-- /.box-body -->
-					<div class="box-footer">  </div>
+
+
+					<div class="box-footer">
+
+						<div class="text-center">
+							<ul class="pagination">
+
+								<c:if test="${pageMaker.prev}">
+									<li><a
+										href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo; </a></li>
+								</c:if>
+
+								<c:forEach begin="${pageMaker.startPage }"
+									end="${pageMaker.endPage }" var="idx">
+									<li 
+										<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
+										<a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
+										<!-- <a href="list?page=1&perPageNum=5&searchType=t&keyword=사진">1</a> -->
+									</li>
+								</c:forEach>
+
+								<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+									<li><a
+										href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+								</c:if>
+
+							</ul>
+						</div>
+
+					</div>
 					<!-- /.box-footer-->
 				</div>
 			</div>
@@ -104,6 +140,7 @@
 		<!-- /.row -->
 	</section>
 	<!-- /.content -->
+
 </div>
 <!-- /.content-wrapper -->
 
@@ -113,6 +150,31 @@
 	if (result == 'SUCCESS') {
 		alert("처리가 완료되었습니다.");
 	}
+</script>
+
+<script>
+	$(document).ready(
+			function() {
+
+				$('#searchBtn').on(
+						"click",
+						function(event) {
+
+							self.location = "list"
+									+ '${pageMaker.makeQuery(1)}'
+									+ "&searchType="
+									+ $("select option:selected").val()
+									+ "&keyword=" + $('#keywordInput').val();
+
+						});
+
+				$('#newBtn').on("click", function(evt) {
+
+					self.location = "register";
+
+				});
+
+			});
 </script>
 
 <%@include file="../include/footer.jspf"%>
