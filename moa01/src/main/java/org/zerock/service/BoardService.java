@@ -5,6 +5,7 @@ import java.util.List;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.replyVO;
 
 public interface BoardService {
 
@@ -28,5 +29,7 @@ public interface BoardService {
   public int listSearchCount(SearchCriteria cri) throws Exception;
   
   public void viewcount(Integer rNum) throws Exception;
+  public void reply(replyVO vo) throws Exception;
+  public List<replyVO> replyAll(replyVO vo) throws Exception;
 
 }

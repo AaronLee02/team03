@@ -15,6 +15,7 @@ import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.PageMaker;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.replyVO;
 import org.zerock.service.BoardService;
 
 @Controller
@@ -78,15 +79,18 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
-	public void read(@RequestParam("rNum") int rNum, Model model) throws Exception {
+	public void read(@RequestParam("rNum") int rNum, Model model,replyVO vo) throws Exception {
 		logger.info("/paramrNum=" + rNum);
 		service.viewcount(rNum);
+		service.replyAll(vo);
 		model.addAttribute(service.read(rNum));
+		
+		model.addAttribute("list", service.replyAll(vo));
 	}
 
 	@RequestMapping(value = "/remove", method = RequestMethod.POST)
 	public String remove(@RequestParam("rNum") int rNum, RedirectAttributes rttr) throws Exception {
-
+		logger.info("/paramrNum=" + rNum);
 		service.remove(rNum);
 
 		rttr.addFlashAttribute("msg", "SUCCESS");
@@ -150,7 +154,7 @@ public class BoardController {
 		rttr.addAttribute("perPageNum", cri.getPerPageNum());
 		rttr.addFlashAttribute("msg", "SUCCESS");
 
-		return "redirect:/board/listPage";
+		return "redirect:/board/list";
 	}
 
 	@RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
@@ -159,5 +163,18 @@ public class BoardController {
 
 		model.addAttribute(service.read(rNum));
 	}
+	@RequestMapping(value = "/reply", method = RequestMethod.POST)
+	public String reply(replyVO vo,@RequestParam("rNum") int rNum, @ModelAttribute("cri") Criteria cri, Model model,RedirectAttributes rttr)
+			throws Exception {
+		logger.info("/replyvo체크"+vo.toString());
+		service.reply(vo);
+		
+
+		model.addAttribute(service.read(rNum));
+		rttr.addAttribute("rNum",rNum);
+		return "redirect:/board/read";
+	}
+	
+	
 
 }

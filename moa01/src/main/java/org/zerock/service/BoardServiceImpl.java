@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.replyVO;
 import org.zerock.persistence.BoardDAO;
 
 @Service
@@ -67,6 +68,15 @@ public class BoardServiceImpl implements BoardService {
   @Override
   public void viewcount(Integer rNum) throws Exception{
 	  dao.viewcount(rNum);
+  }
+  
+  @Override
+  public void reply(replyVO vo) throws Exception{
+	  dao.reply(vo);
+  }
+  @Override
+  public List<replyVO> replyAll(replyVO vo) throws Exception{
+	  return dao.replyAll(vo);
   }
 
 }

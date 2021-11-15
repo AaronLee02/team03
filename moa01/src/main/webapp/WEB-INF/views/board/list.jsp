@@ -87,7 +87,7 @@
 								<tr>
 									<td>${boardVO.rNum}</td>
 									<td><a
-										href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.rNum}'>
+										href='/board/read${pageMaker.makeSearch(pageMaker.cri.page) }&rNum=${boardVO.rNum}'>
 											${boardVO.title} </a></td>
 									<td>${boardVO.content}</td>
 									<td>${boardVO.writer}</td>

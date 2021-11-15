@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 
 <%@include file="../include/header.jspf"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
 
@@ -61,7 +62,52 @@
 						<button type="submit" class="btn btn-danger">REMOVE</button>
 						<button type="submit" class="btn btn-primary">LIST ALL</button>
 					</div>
+					<div class="box box-success">
+						<div class="box-header">
+							<h3 class="box-title">ADD NEW REPLY</h3>
+						</div>
 
+
+
+
+						<form action="/board/reply" method=POST>
+							<div class="box-body">
+								<label for="exampleInputEmail1">Writer</label> <input
+									class="form-control" type="text" placeholder="name"
+									vlaue="${replyVO.name}" name="name"> <label
+									for="exampleInputEmail1">Reply Text</label> <input
+									class="form-control" type="text" placeholder="REPLY TEXT"
+									value="${replyVO.newReply}" name="newReply">
+							</div>
+
+							<div class="box-footer">
+								<input type='hidden' name='rNum' value="${boardVO.rNum}">
+								<button type="submit" class="btn btn-primary">ADD
+									REPLY</button>
+							</div>
+						</form>
+					
+					
+					
+					
+							
+							
+						<c:forEach items="${list}" var="replyVO">
+								<tr>
+									<td>${replyVO.name}</td>
+									<td>${replyVO.newReply}</td>
+									<td>${boardVO.writer}</td>
+								</tr>
+							</c:forEach>
+
+						
+						
+						
+						
+						
+						
+					
+					</div>
 
 					<script>
 						$(document).ready(function() {

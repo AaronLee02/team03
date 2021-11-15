@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.replyVO;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -82,6 +83,13 @@ public class BoardDAOImpl implements BoardDAO {
   public void viewcount(Integer rNum)throws Exception{
 	  session.update(namespace + ".viewcount",rNum);
   }
-
+  @Override
+  public void reply(replyVO vo) throws Exception {
+    session.insert(namespace + ".reply", vo);
+  }
+  @Override
+  public List<replyVO> replyAll(replyVO vo) throws Exception{
+	  return session.selectList(namespace + ".replyAll", vo);
+  }
 
 }
