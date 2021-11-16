@@ -88,21 +88,40 @@
 						</form>
 					
 					
-					
-					
-							
-							
-						<c:forEach items="${list}" var="replyVO">
+					<div class="box">
+					<div class="box-header with-border">
+						<h3 class="box-title">LIST PAGING</h3>
+					</div>
+					<div class="box-body">
+						<table class="table table-bordered">
+							<tr>
+								<th>작성자</th>
+								<th>내용</th>
+								<th>작성일자</th>
+								<th>삭제</th>
+							</tr>
+
+							<c:forEach items="${list}" var="replyVO">
+
 								<tr>
+							
+									<td style="display:none;">${replyVO.bno}</td>
 									<td>${replyVO.name}</td>
 									<td>${replyVO.newReply}</td>
-									<td>${boardVO.writer}</td>
+									<td>${replyVO.userdate}</td>
+									<td>
+									<button  type="submit" class="btn btn-delete" value="${replyVO.bno}">REMOVE</button>
+								
+									</td>
+									
+									
+											
 								</tr>
-							</c:forEach>
 
-						
-						
-						
+							</c:forEach>
+					
+						</table>
+					</div>
 						
 						
 						
@@ -124,6 +143,12 @@
 
 							$(".btn-danger").on("click", function() {
 								formObj.attr("action", "/board/remove");
+								formObj.submit();
+							});
+							
+							$(".btn-delete").on("click", function() {
+								
+								formObj.attr("action", "/board/delete");
 								formObj.submit();
 							});
 

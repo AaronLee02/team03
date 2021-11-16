@@ -33,5 +33,6 @@ public interface BoardDAO {
   public void viewcount(Integer rNum)throws Exception;
   public void reply(replyVO vo) throws Exception;
   public List<replyVO> replyAll(replyVO vo) throws Exception;
+  public void delete(int bno)throws Exception;
 
 }

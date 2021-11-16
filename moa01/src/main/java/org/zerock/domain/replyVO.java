@@ -9,6 +9,7 @@ private String password;
 private String name;
 private Integer rNum;
 private Date userdate;
+private Integer bno;
 public String getNewReply() {
 	return newReply;
 }
@@ -39,12 +40,17 @@ public Date getUserdate() {
 public void setUserdate(Date userdate) {
 	this.userdate = userdate;
 }
+public Integer getBno() {
+	return bno;
+}
+public void setBno(Integer bno) {
+	this.bno = bno;
+}
 @Override
 public String toString() {
 	return "replyVO [newReply=" + newReply + ", password=" + password + ", name=" + name + ", rNum=" + rNum
-			+ ", userdate=" + userdate + "]";
+			+ ", userdate=" + userdate + ", bno=" + bno + "]";
 }
-
 
 
 }

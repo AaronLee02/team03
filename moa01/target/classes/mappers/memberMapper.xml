@@ -5,8 +5,8 @@
 <mapper namespace="moa.dao">
 
 <insert id="create">
-	INSERT INTO usersignup2 ( userID , userPW , userName , userEmail)
-		VALUES (#{userID},#{userPW},#{userName},#{userEmail})
+	INSERT INTO usersignup2 (userNO , userID , userPW , userName , userEmail)
+		VALUES (usersignup2_no.NEXTVAL,#{userID},#{userPW},#{userName},#{userEmail})
 	</insert>
 	
 	

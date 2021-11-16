@@ -174,6 +174,15 @@ public class BoardController {
 		rttr.addAttribute("rNum",rNum);
 		return "redirect:/board/read";
 	}
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public String delete(@RequestParam(value="bno",required=false) int bno) throws Exception {
+		
+		logger.info("/replyvo체크2"+bno);
+		service.delete(bno);
+		return "redirect:/board/read";
+		
+	}
+	
 	
 	
 

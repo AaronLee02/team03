@@ -78,5 +78,9 @@ public class BoardServiceImpl implements BoardService {
   public List<replyVO> replyAll(replyVO vo) throws Exception{
 	  return dao.replyAll(vo);
   }
-
+  @Override
+  public void delete(int bno) throws Exception{
+	  dao.delete(bno);
+	  
+  }
 }

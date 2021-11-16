@@ -91,5 +91,9 @@ public class BoardDAOImpl implements BoardDAO {
   public List<replyVO> replyAll(replyVO vo) throws Exception{
 	  return session.selectList(namespace + ".replyAll", vo);
   }
+  @Override
+  public void delete(int bno)throws Exception{
+	  session.delete(namespace + ".replyDelete", bno);
+  }
 
 }
