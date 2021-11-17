@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.BoardMapper">
+
+	<insert id="create">
+		insert into tbl_board (bno, title, content, writer, regdate, viewcnt)
+		values(tbl_board_bno_SEQ.NEXTVAL, #{title},#{content}, #{writer}, SYSDATE, 0)
+	</insert>
+
+	<select id="read" resultType="org.zerock.domain.BoardVO">
+		select
+		bno, title, content, writer,
+		regdate, viewcnt , replycnt
+		from
+		tbl_board
+		where bno = #{bno}
+	</select>
+
+	<select id="readBno" resultType="int">
+		select tbl_board_bno_SEQ.CURRVAL from dual
+	</select>
+
+	<select id="listAll" resultType="org.zerock.domain.BoardVO">
+	<![CDATA[
+		select * from tbl_board where bno > 0 
+		order by bno desc, regdate desc
+ 	]]>
+	</select>
+
+	<select id="listPage" resultType="BoardVO">
+	<![CDATA[
+	select 
+	bno, title, content, writer, regdate, viewcnt , replycnt
+	from 
+	tbl_board 
+	where bno > 0 
+	order by bno desc, regdate desc
+	limit #{page}, 10
+ ]]>
+	</select>
+
+	<select id="listCriteria" resultType="BoardVO">
+ <![CDATA[
+select 
+bno, title, content, writer, regdate, viewcnt , replycnt
+from 
+tbl_board 
+where bno > 0 
+order by bno desc, regdate desc
+limit #{pageStart}, #{perPageNum}
+ ]]>
+	</select>
+
+
+	<update id="update">
+		update tbl_board set title =#{title}, content
+		=#{content}
+		where bno = #{bno}
+	</update>
+
+	<delete id="delete">
+		delete from tbl_board where bno = #{bno}
+	</delete>
+
+
+
+	<select id="countPaging" resultType="int">
+ <![CDATA[
+select 
+	count(bno) 
+from 
+	tbl_board 
+where 
+	bno > 0 
+ ]]>
+	</select>
+
+
+
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">
+				and title like '%${keyword}%'
+			</if>
+			<if test="searchType == 'c'.toString()">
+				and content like '%${keyword}%'
+			</if>
+			<if test="searchType == 'w'.toString()">
+				and writer like '%${keyword}%'
+			</if>
+			<if test="searchType == 'tc'.toString()">
+				and title like '%${keyword}%' 
+				OR content like '%${keyword}%'
+			</if>
+			<if test="searchType == 'cw'.toString()">
+				and content like '%${keyword}%' 
+				OR writer like '%${keyword}%'
+			</if>
+			<if test="searchType == 'tcw'.toString()">
+				and title like '%${keyword}%'
+				OR content like '%${keyword}%'
+				OR writer like '%${keyword}%'
+			</if>
+		</if>
+	</sql>
+
+	<select id="listSearch" resultType="BoardVO">
+		<![CDATA[  
+		select * from (select rownum rwno, bno, title, content, writer, regdate, viewcnt, replycnt 
+        from (select * from tbl_board
+        where bno>0
+		]]>
+
+		<include refid="search"></include>
+  
+		<![CDATA[    
+        order by regdate desc))
+        where rwno between #{pageStart}+1 and #{pageStart}+#{perPageNum}
+		]]>
+	</select>
+
+	<select id="listSearchCount" resultType="int">
+		<![CDATA[  
+		select count(bno) 
+		from tbl_board 
+		where bno > 0 
+		]]>
+		<include refid="search"></include>
+
+	</select>
+
+
+
+	<update id="updateReplyCnt">
+		update tbl_board set replycnt = replycnt + #{amount} where bno = #{bno}
+	</update>
+
+
+	<update id="updateViewCnt">
+		update tbl_board set viewcnt = viewcnt +1 where bno = #{bno}
+	</update>
+
+
+
+
+
+	<!-- <insert id="addAttach"> insert into tbl_attach(fullname, bno) values 
+		(#{fullName}, LAST_INSERT_ID()) </insert> -->
+	<!-- <insert id="addAttach"> insert into tbl_attach(fullname, bno) values 
+		(#{fullName},(SELECT TOP 1 bno FROM tbl_board ORDER BY bno DESC)) </insert> -->
+
+	<insert id="addAttach">
+		insert into tbl_attach(fullname, bno) values (#{fullName}, tbl_board_bno_SEQ.CURRVAL)
+	</insert>
+
+
+
+
+
+	<select id="getAttach" resultType="string">
+		select fullname from tbl_attach where bno = #{bno} order by regdate
+	</select>
+
+
+	<delete id="deleteAttach">
+		delete from tbl_attach where bno = #{bno}
+	</delete>
+
+	<insert id="replaceAttach">
+		insert into tbl_attach(fullname, bno) values (#{fullName}, #{bno})
+	</insert>
+
+
+</mapper>
