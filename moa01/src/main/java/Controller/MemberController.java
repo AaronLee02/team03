@@ -49,16 +49,18 @@ public class MemberController {
 		HttpSession session = req.getSession();
 		MemberVO login = service.login(vo);
 		
-		logger.info("/loginvo"+ service.login(vo));
+		logger.info("/* login="+ login.toString());
 		
 		if(login == null) {
 			session.setAttribute("member", null);
-			rttr.addFlashAttribute("msg", false);
+			rttr.addFlashAttribute("msg", "FAIL");
 			return "/main/joinfail";
 		}else {
-			
-			session.setAttribute("member", login);
-			return "/main/joinSuccess";
+			 
+			//session.setAttribute("userlogin", vo.getUserID());
+			//rttr.addAttribute("login",login);
+			rttr.addFlashAttribute("msg", "SUCCESS");
+			return "redirect:/main/index";
 		}
 		
 	}	

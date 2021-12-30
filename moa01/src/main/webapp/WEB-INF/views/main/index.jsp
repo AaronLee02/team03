@@ -1,6 +1,9 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 
 <%@include file="../include/header.jspf"%>
+<%
+String login = request.getParameter("login");
+%>
 
 
 <div class="banner">
@@ -10,7 +13,7 @@
 <div class="welcome">
 	<div class="container">
 
-	
+
 		<div class="RewardCategoryCircleList_container__1GDge">
 			<div class="CategoryCircleList_container__3fAVd">
 				<button
@@ -21,111 +24,94 @@
 				</button>
 				<div class="CategoryCircleList_wrap__3jHrp">
 					<div class="CategoryCircleList_list__2YBF3">
-						<a class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+						<a
+							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/01.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">라푸마 아웃도어</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/02.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">테크·가전</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/03.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">패션·잡화</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/04.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">뷰티</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/05.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">푸드</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/06.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">홈·리빙</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/07.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">여행·레저</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/08.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">스포츠·모빌리티</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/09.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">캐릭터·굿즈</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/10.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">베이비·키즈</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/11.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">반려동물</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/12.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">게임·취미</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/13.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">컬쳐·아티스트</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/14.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">클래스·컨설팅</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/15.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">출판</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/16.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">소셜·캠페인</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/17.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">기부·후원</span></span></a><a
 							class="CategoryCircleList_item__2_QZ3 RewardCategoryCircleList_item__2JEvT"
-							href="#"><span
-							class="CategoryCircle_container__2rZ3a"><span
+							href="#"><span class="CategoryCircle_container__2rZ3a"><span
 								class="CategoryCircle_circle__3khwj"
 								style="background-image: url(/images/18.jpg);"></span><span
 								class="CategoryCircle_name__3Ca9T">모임</span></span></a>
@@ -138,9 +124,9 @@
 				</button>
 			</div>
 		</div>
-		
-		
-		
+
+
+
 		<div class="col-md-3 welcome-left">
 			<h2>Moment Of Anniversary</h2>
 		</div>
@@ -498,6 +484,16 @@
 				});
 			</script>
 			<script type="text/javascript" src="/resources/js/jquery.flexisel.js"></script>
+			<script>
+				var result = '${msg}';
+
+				if (result == 'SUCCESS') {
+					alert("성공적으로 로그인 되었습니다.");
+					location.replace(self.location);
+				}
+			</script>
+
+</script>
 		</div>
 	</div>
 </div>

@@ -10,8 +10,6 @@
 <div class="welcome">
 	<div class="container">
 
-
-
 		<div class="col-md-3 welcome-left">
 			<h2>Moment Of Anniversary</h2>
 		</div>

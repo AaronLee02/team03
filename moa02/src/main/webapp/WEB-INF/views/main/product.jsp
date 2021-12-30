@@ -3,8 +3,13 @@
 <%@include file="../include/header.jspf"%>
 <link href="/resources/css/bootstrap.css" rel="stylesheet"
 	type="text/css" media="all" />
-	
-	
+
+<link rel="stylesheet" href="/resources/css/wadiz.css">
+<link rel="stylesheet" href="/resources/css/sub.css">
+<link rel="stylesheet" href="/resources/css/sub2.css">
+<link rel="stylesheet" href="/resources/css/campaign.css">
+
+
 <!--header//-->
 <div class="product-model">
 	<div class="container">
@@ -12,130 +17,94 @@
 			<li><a href="index.html">MOA</a></li>
 			<li class="active">펀딩하기</li>
 		</ol>
-
-
 		<!-- 카테고리메뉴 -->
-
-		<div class="RewardCategoryCircleList_container">
-			<div class="CategoryCircleList_container">
-				<button
-					class="CategoryCircleList_previous__xJMxg CategoryCircleList_hidden"
-					type="button" data-dir="이전">
-					<i class="icon chevron-left CategoryCircleList_icon"
-						aria-hidden="true"></i>
-				</button>
-				<div class="CategoryCircleList_wrap">
-					<div class="CategoryCircleList_list">
-						<a class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/02.jpg);"></span><span
-								class="CategoryCircle_name">테크·가전</span></span></a> <a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/03.jpg);"></span><span
-								class="CategoryCircle_name">패션·잡화</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/04.jpg);"></span><span
-								class="CategoryCircle_name">뷰티</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/05.jpg);"></span><span
-								class="CategoryCircle_name">푸드</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/06.jpg);"></span><span
-								class="CategoryCircle_name">홈·리빙</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/07.jpg);"></span><span
-								class="CategoryCircle_name">여행·레저</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/08.jpg);"></span><span
-								class="CategoryCircle_name">스포츠·모빌리티</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/09.jpg);"></span><span
-								class="CategoryCircle_name">캐릭터·굿즈</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/10.jpg);"></span><span
-								class="CategoryCircle_name">베이비·키즈</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/11.jpg);"></span><span
-								class="CategoryCircle_name">반려동물</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/12.jpg);"></span><span
-								class="CategoryCircle_name">게임·취미</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/13.jpg);"></span><span
-								class="CategoryCircle_name">컬쳐·아티스트</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/14.jpg);"></span><span
-								class="CategoryCircle_name">클래스·컨설팅</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/15.jpg);"></span><span
-								class="CategoryCircle_name">출판</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/16.jpg);"></span><span
-								class="CategoryCircle_name">소셜·캠페인</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/17.jpg);"></span><span
-								class="CategoryCircle_name">기부·후원</span></span></a><a
-							class="CategoryCircleList_item RewardCategoryCircleList_item"
-							href="#"><span class="CategoryCircle_container"><span
-								class="CategoryCircle_circle"
-								style="background-image: url(/images/18.jpg);"></span><span
-								class="CategoryCircle_name">모임</span></span></a>
+		<div class="category-circle-list">
+			<ul>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/200.jpg" alt="" />
+						</a> <span class="title-name">테크·가전</span>
 					</div>
-				</div>
-				<button class="CategoryCircleList_next" type="button" data-dir="다음">
-					<i class="icon chevron-right CategoryCircleList_icon"
-						aria-hidden="true"></i>
-				</button>
-			</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/201.jpg" alt="" />
+						</a> <span class="title-name">패션·잡화</span>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/202.jpg" alt="" />
+						</a> <span class="title-name">뷰티</span>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/203.jpg" alt="" />
+						</a> <span class="title-name">푸드</span>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/204.jpg" alt="" />
+						</a> <span class="title-name">홈·리빙</span>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/205.jpg" alt="" />
+						</a> <span class="title-name">여행·레저</span>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/206.jpg" alt="" />
+						</a> <span class="title-name">스포츠</span>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/207.jpg" alt="" />
+						</a> <span class="title-name">캐릭터·굿즈</span>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/208.jpg" alt="" />
+						</a> <span class="title-name">베이비·키즈</span>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/209.jpg" alt="" />
+						</a> <span class="title-name">반려동물</span>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/210.jpg" alt="" />
+						</a> <span class="title-name">게임·취미</span>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item-box">
+						<a href="#"> <img src="/resources/images/211.jpg" alt="" />
+						</a> <span class="title-name">기부·후원</span>
+					</div>
+				</li>
+			</ul><!-- 
+			<button type="button" class="btn-arrow">></button> -->
+
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
+		
+		
+		<!-- --><!-- 
 		<h2></h2>
 		<div class="col-md-9 product-model-sec">
-			<a href="single.html"><div class="product-grid love-grid">
+			<a href="single.html">
+				<div class="product-grid love-grid">
 					<div class="more-product">
-						<span> </span>
+					<span> </span>
 					</div>
 					<div class="product-img b-link-stripe b-animate-go  thickbox">
 						<img src="/resources/images/72.jpg" class="img-responsive" alt="" />
@@ -146,311 +115,76 @@
 								</button>
 							</h4>
 						</div>
-					</div></a>
+					</div>
+			</a>
 			<div class="product-info simpleCart_shelfItem">
 				<div class="product-info-cust prt_name">
 					<h4>BESPOKE 김치플러스 4도어 프리스탠딩 486 L</h4>
-					<p>작성자: 김민철</p>
-					<span class="item_price">3,087,000</span>
 					<div class="item_quantity"></div>
 				</div>
+				<div class="project-state-info">
+	                <div class="state-box" >
+		                <p class="remaining-day">14일 남음</p>
+		                <p class="rate-bar"><em style="width:56%"></em></p>
+		                <p class="achievement-rate" style="margin-bottom: 16px;"><strong>56</strong>% 달성</p>
+		                <p class="total-amount" style="margin-bottom: 16px;"><strong>283,000</strong>원 펀딩</p>
+		            </div>
+                </div>
 				<div class="clearfix"></div>
 			</div>
-		</div>
-
-		<a href="single.html"><div class="product-grid love-grid">
-				<div class="more-product">
-					<span> </span>
-				</div>
-				<div class="product-img b-link-stripe b-animate-go  thickbox">
-					<img src="/resources/images/p2.jpg" class="img-responsive" alt="" />
-					<div class="b-wrapper">
-						<h4 class="b-animate b-from-left  b-delay03">
-							<button class="btns">
-								<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-								View
-							</button>
-						</h4>
+		</div> -->
+		
+		
+		<div class="ProjectCardList_container">
+			<div class="ProjectCardList_list">
+				<div class="ProjectCardList_item">
+				<div>
+					<div class="CommonCard_container CommonCard_squareSmall">
+						<a class="CardLink_link CommonCard_image">
+							<div class="CommonCard_rect">
+								<span class="CommonCard_background CommonCard_visible" style="background-image:images/300.jpg">
+								</span>
+								<div class="banner_adBadge">AD
+								</div>
+							</div>
+						</a>
+					<div class="CommonCard_info">
+						<div class="RewardProjectCard_info">
+							<div class="RewardProjectCard_infoTop">
+								<a class="CardLink_link">
+									<p class="CommonCard_title RewardProjectCard_title">
+										<strong>임상확인| 닦아내기만 했는데 모공개선 95%? 무자극 클렌징패드
+										</strong>
+									</p>
+								</a>
+								<div>
+									<span class="RewardProjectCard_category">뷰티
+									</span>
+									<span class="RewardProjectCard_makerName">"(주)바를참스킨"
+									</span>
+								</div>
+							</div>
+							<div class="RewardProjectCard_gauge">
+								<span style="width:100%;">
+								</span>
+							</div>
+							<span class="RewardProjectCard_percent">2143%
+							</span>
+							<span class="RewardProjectCard_amount">10,719,900원
+							</span>
+							<span class="RewardProjectCard_days RewardProjectCard_isAchieve">
+								<span class="RewardProjectCard_remainingDay">4일
+								</span>
+								<span class="RewardProjectCard_remainingDayText">
+								</span>
+								<span class="RewardProjectCard_isAchieve">
+								</span>
+							</span>
+						</div>
 					</div>
-				</div></a>
-		<div class="product-info simpleCart_shelfItem">
-			<div class="product-info-cust">
-				<h4>Jewellery #1</h4>
-				<p>ID: SR4598</p>
-				<span class="item_price">$187.95</span> <input type="text"
-					class="item_quantity" value="1" /> <input type="button"
-					class="item_add items" value="ADD">
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-
-	<a href="single.html"><div class="product-grid love-grid">
-			<div class="more-product">
-				<span> </span>
-			</div>
-			<div class="product-img b-link-stripe b-animate-go  thickbox">
-				<img src="/resources/images/p3.jpg" class="img-responsive" alt="" />
-				<div class="b-wrapper">
-					<h4 class="b-animate b-from-left  b-delay03">
-						<button class="btns">
-							<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-							View
-						</button>
-					</h4>
 				</div>
-			</div></a>
-	<div class="product-info simpleCart_shelfItem">
-		<div class="product-info-cust">
-			<h4>Jewellery #1</h4>
-			<p>ID: SR4598</p>
-			<span class="item_price">$187.95</span> <input type="text"
-				class="item_quantity" value="1" /> <input type="button"
-				class="item_add items" value="ADD">
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-
-<a href="single.html"><div class="product-grid love-grid">
-		<div class="more-product">
-			<span> </span>
-		</div>
-		<div class="product-img b-link-stripe b-animate-go  thickbox">
-			<img src="/resources/images/p4.jpg" class="img-responsive" alt="" />
-			<div class="b-wrapper">
-				<h4 class="b-animate b-from-left  b-delay03">
-					<button class="btns">
-						<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-						View
-					</button>
-				</h4>
 			</div>
-		</div></a>
-<div class="product-info simpleCart_shelfItem">
-	<div class="product-info-cust">
-		<h4>Jewellery #1</h4>
-		<p>ID: SR4598</p>
-		<span class="item_price">$187.95</span> <input type="text"
-			class="item_quantity" value="1" /> <input type="button"
-			class="item_add items" value="ADD">
-	</div>
-	<div class="clearfix"></div>
-</div>
-</div>
-
-<a href="single.html"><div class="product-grid love-grid">
-		<div class="more-product">
-			<span> </span>
 		</div>
-		<div class="product-img b-link-stripe b-animate-go  thickbox">
-			<img src="/resources/images/p5.jpg" class="img-responsive" alt="" />
-			<div class="b-wrapper">
-				<h4 class="b-animate b-from-left  b-delay03">
-					<button class="btns">
-						<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-						View
-					</button>
-				</h4>
-			</div>
-		</div></a>
-<div class="product-info simpleCart_shelfItem">
-	<div class="product-info-cust">
-		<h4>Jewellery #1</h4>
-		<p>ID: SR4598</p>
-		<span class="item_price">$187.95</span> <input type="text"
-			class="item_quantity" value="1" /> <input type="button"
-			class="item_add items" value="ADD">
-	</div>
-	<div class="clearfix"></div>
-</div>
-</div>
-
-<a href="single.html"><div class="product-grid love-grid">
-		<div class="more-product">
-			<span> </span>
-		</div>
-		<div class="product-img b-link-stripe b-animate-go  thickbox">
-			<img src="/resources/images/p6.jpg" class="img-responsive" alt="" />
-			<div class="b-wrapper">
-				<h4 class="b-animate b-from-left  b-delay03">
-					<button class="btns">
-						<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-						View
-					</button>
-				</h4>
-			</div>
-		</div></a>
-<div class="product-info simpleCart_shelfItem">
-	<div class="product-info-cust">
-		<h4>Wedding Gownes</h4>
-		<p>ID: SR4598</p>
-		<span class="item_price">$187.95</span> <input type="text"
-			class="item_quantity" value="1" /> <input type="button"
-			class="item_add items" value="ADD">
-	</div>
-	<div class="clearfix"></div>
-</div>
-</div>
-<a href="single.html"><div class="product-grid love-grid">
-		<div class="more-product">
-			<span> </span>
-		</div>
-		<div class="product-img b-link-stripe b-animate-go  thickbox">
-			<img src="/resources/images/p7.jpg" class="img-responsive" alt="" />
-			<div class="b-wrapper">
-				<h4 class="b-animate b-from-left  b-delay03">
-					<button class="btns">
-						<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-						View
-					</button>
-				</h4>
-			</div>
-		</div></a>
-<div class="product-info simpleCart_shelfItem">
-	<div class="product-info-cust">
-		<h4>Wedding Flowers</h4>
-		<p>ID: SR4598</p>
-		<span class="item_price">$187.95</span> <input type="text"
-			class="item_quantity" value="1" /> <input type="button"
-			class="item_add items" value="ADD">
-	</div>
-	<div class="clearfix"></div>
-</div>
-</div>
-<a href="single.html"><div class="product-grid love-grid">
-		<div class="more-product">
-			<span> </span>
-		</div>
-		<div class="product-img b-link-stripe b-animate-go  thickbox">
-			<img src="/resources/images/p8.jpg" class="img-responsive" alt="" />
-			<div class="b-wrapper">
-				<h4 class="b-animate b-from-left  b-delay03">
-					<button class="btns">
-						<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-						View
-					</button>
-				</h4>
-			</div>
-		</div></a>
-<div class="product-info simpleCart_shelfItem">
-	<div class="product-info-cust">
-		<h4>Suits</h4>
-		<p>ID: S4BJ87</p>
-		<span class="item_price">$187.95</span> <input type="text"
-			class="item_quantity" value="1" /> <input type="button"
-			class="item_add items" value="ADD">
-	</div>
-	<div class="clearfix"></div>
-</div>
-</div>
-<a href="single.html"><div class="product-grid love-grid">
-		<div class="more-product">
-			<span> </span>
-		</div>
-		<div class="product-img b-link-stripe b-animate-go  thickbox">
-			<img src="/resources/images/p9.jpg" class="img-responsive" alt="" />
-			<div class="b-wrapper">
-				<h4 class="b-animate b-from-left  b-delay03">
-					<button class="btns">
-						<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-						View
-					</button>
-				</h4>
-			</div>
-		</div></a>
-<div class="product-info simpleCart_shelfItem">
-	<div class="product-info-cust">
-		<h4>Sherwani</h4>
-		<p>ID: SR4598</p>
-		<span class="item_price">$187.95</span> <input type="text"
-			class="item_quantity" value="1" /> <input type="button"
-			class="item_add items" value="ADD">
-	</div>
-	<div class="clearfix"></div>
-</div>
-</div>
-<a href="single.html"><div class="product-grid love-grid">
-		<div class="more-product">
-			<span> </span>
-		</div>
-		<div class="product-img b-link-stripe b-animate-go  thickbox">
-			<img src="/resources/images/p10.jpg" class="img-responsive" alt="" />
-			<div class="b-wrapper">
-				<h4 class="b-animate b-from-left  b-delay03">
-					<button class="btns">
-						<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-						View
-					</button>
-				</h4>
-			</div>
-		</div></a>
-<div class="product-info simpleCart_shelfItem">
-	<div class="product-info-cust">
-		<h4>Ethnic Wear</h4>
-		<p>ID: SR4598</p>
-		<span class="item_price">$187.95</span> <input type="text"
-			class="item_quantity" value="1" /> <input type="button"
-			class="item_add items" value="ADD">
-	</div>
-	<div class="clearfix"></div>
-</div>
-</div>
-<a href="single.html"><div class="product-grid love-grid">
-		<div class="more-product">
-			<span> </span>
-		</div>
-		<div class="product-img b-link-stripe b-animate-go  thickbox">
-			<img src="/resources/images/p11.jpg" class="img-responsive" alt="" />
-			<div class="b-wrapper">
-				<h4 class="b-animate b-from-left  b-delay03">
-					<button class="btns">
-						<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-						View
-					</button>
-				</h4>
-			</div>
-		</div></a>
-<div class="product-info simpleCart_shelfItem">
-	<div class="product-info-cust">
-		<h4>Watches</h4>
-		<p>ID: S4BJ87</p>
-		<span class="item_price">$187.95</span> <input type="text"
-			class="item_quantity" value="1" /> <input type="button"
-			class="item_add items" value="ADD">
-	</div>
-	<div class="clearfix"></div>
-</div>
-</div>
-<a href="single.html"><div class="product-grid love-grid">
-		<div class="more-product">
-			<span> </span>
-		</div>
-		<div class="product-img b-link-stripe b-animate-go  thickbox">
-			<img src="/resources/images/p12.jpg" class="img-responsive" alt="" />
-			<div class="b-wrapper">
-				<h4 class="b-animate b-from-left  b-delay03">
-					<button class="btns">
-						<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>Quick
-						View
-					</button>
-				</h4>
-			</div>
-		</div></a>
-<div class="product-info simpleCart_shelfItem">
-	<div class="product-info-cust">
-		<h4>Jewellery #1</h4>
-		<p>ID: SR4598</p>
-		<span class="item_price">$187.95</span> <input type="text"
-			class="item_quantity" value="1" /> <input type="button"
-			class="item_add items" value="ADD">
-	</div>
-	<div class="clearfix"></div>
-</div>
-</div>
-</div>
-
-
 <!-- <div class="rsidebar span_1_of_left">
 				 <section  class="sky-form">
 					 <div class="product_right">

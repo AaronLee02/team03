@@ -220,6 +220,57 @@ h1.b1,h2.b2,h3.b3 {
 	background-size:cover;
 	min-height:700px;
 }
+
+/*--category-circle-list--*/
+.category-circle-list {
+	margin: 20px 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.category-circle-list  ul {
+	display: flex;
+}
+.category-circle-list li {
+	list-style: none;
+	margin-right: 16px;
+}
+.category-circle-list li:last-child {
+	margin-right: 0;
+}
+.category-circle-list .item-box {
+	width: 80px;
+    height: 100%;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.category-circle-list a {
+	display: inline-block;
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin:auto;
+}
+.category-circle-list a img {
+	width: 100%;
+	height: 100%;
+}
+.category-circle-list .title-name {
+	width: 100%;
+	text-align: center;
+	padding-top:5px;
+}
+.category-circle-list .btn-arrow {
+	margin-left: 20px;
+	width: 50px;
+	height: 50px;
+	
+}
+
 /*--welcome--*/
 .welcome{
 	padding:4em 0;
@@ -679,6 +730,7 @@ ul.tabs-menu li.active a{
 /*-----------------------------------------------------------------------------------*/
 .b-animate-go{
 	text-decoration:none;
+	height: 140px;
 }
 .b-animate{
 	transition: all 0.5s;
@@ -700,7 +752,7 @@ ul.tabs-menu li.active a{
 	border:none;
 	width:60%;
 	text-decoration:none;
-	background:rgba(183, 183, 183, 0.93);
+	background:#00a0dc;
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
@@ -714,7 +766,7 @@ ul.tabs-menu li.active a{
 	font-size:0.9em;
 }
 .b-animate button:hover{
-	background:#989898;
+	background:#00a0dc;
 }
 /* lt-ie9 */
 .b-animate-go:hover .b-animate{
@@ -733,7 +785,9 @@ ul.tabs-menu li.active a{
 }
 .product-grid {
 	width: 22%;
+	height: 400px;
 	margin: 0 3% 4% 0;
+	padding:10px;
 	float: left;	
 	position: relative;
 	transition: 0.5s all;
@@ -769,12 +823,10 @@ ul.tabs-menu li.active a{
 }
 .product-info-cust {
 	float: left;
-	padding: 0.8em 1.2em;
 } 
 .item_quantity {
   margin: 1em 0;
   font-size: 0.85em;
-  padding: 5px 10px;
   display: block;
 }
 .item_add{
@@ -793,7 +845,6 @@ ul.tabs-menu li.active a{
 	outline:none;
 }
 .prt_name{
-	padding: 0.8em 1.2em;
 	float:none;
 }
 .items{
@@ -811,7 +862,7 @@ ul.tabs-menu li.active a{
 	padding: 0.545em;
 }
 .product-info-cust h4{
-	color:#caccce;
+	margin-top:15px;
 	font-weight:500;
 	font-size:1.3em;
 }
@@ -934,13 +985,11 @@ ul.dropdown-menu1 li a:hover{
 }
 .id h4{
 	color: #777;
-  font-size: 0.85em;
 }
 .item-list ul{
-	padding-left:15px;
 }
 .item-list ul li {
-	padding:2px 0;
+	padding:5px 0;
 	color:#999;
 	font-size:0.9em;
 }
@@ -950,7 +999,7 @@ ul.dropdown-menu1 li a:hover{
 	font-size:0.95em;
 }
 .cost{
-	margin:0.3em 0 1em 0;
+	margin:15px 0 30px 0;
 }
 .prdt-cost{
 	float:left;
@@ -959,13 +1008,11 @@ ul.dropdown-menu1 li a:hover{
 .prdt-cost ul li{
 	display:block;
 	font-family: 'Arimo', sans-serif;
-	font-size:0.8em;
-	padding:2px;
+	padding:4px;
 	color:#999;
 }
 .prdt-cost ul li.active{
 	font-size:1.3em;
-	color:red;
 }
 .prdt-cost ul a{
 font-size: 0.8em;
@@ -998,7 +1045,6 @@ font-size: 0.8em;
 	padding:0!important;
 }
 .det {
-  margin-top:4em;
     padding-right: 3em;
 }
 .form-control:focus{
@@ -2435,7 +2481,6 @@ figure.effect-bubba p {
 }
 .det {
   padding: 0em;
-   margin-top: 2em;
 }
 .navbar-form .form-control {
   width: 100%;
@@ -2484,3 +2529,4 @@ a.add-cart {
   margin-top: 0;
 }
 }
+
